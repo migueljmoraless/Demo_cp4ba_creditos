@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>compute services count</name>
+  <uuid>dbcc448c-ac9c-4347-a039-ac455a37e32c</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'Score rate' is more than 1
+then
+	set decision to 1 ;
+else
+    set decision to 2;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

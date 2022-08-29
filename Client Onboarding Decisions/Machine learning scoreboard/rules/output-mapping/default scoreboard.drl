@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>default scoreboard</name>
+  <uuid>b0cb8a7f-29b0-4a5a-96dd-2c7f4813deb9</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if 'ML model invocation' is in error 
+
+then
+
+set decision to a new Scoreboard where
+		the Confidence is 0, 
+		High risk is true,
+        the Segment is "Unknown" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

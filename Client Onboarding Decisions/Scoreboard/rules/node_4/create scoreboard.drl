@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>create scoreboard</name>
+  <uuid>97348a67-1f62-4d8d-a409-c8b2e04d87bb</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to a new Scoreboard where
+		the Confidence is round(the Confidence of 'Predictive risk'* 100, 4) , 
+        High risk is 'Predictive risk' is High risk ,
+		the Segment is 'Segment category' ;
+]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>services score</name>
+  <uuid>8d35fd07-1216-4938-9236-d270f8db2652</uuid>
+  <documentation><![CDATA[Defines a score based on the number of requested services.]]></documentation>
+  <locale>en_US</locale>
+  <definition><![CDATA[if the number of elements in the Services requested of Services is more than 3
+then 
+add 1 to decision ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

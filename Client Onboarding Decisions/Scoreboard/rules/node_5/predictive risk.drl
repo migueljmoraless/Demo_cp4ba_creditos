@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>predictive risk</name>
+  <uuid>a9d1f127-8916-4f75-82cc-3169f90cb4d1</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the confidence rate of 'Predictive risk' is at least 0.7
+then
+	set decision to 'Build scoreboard';]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

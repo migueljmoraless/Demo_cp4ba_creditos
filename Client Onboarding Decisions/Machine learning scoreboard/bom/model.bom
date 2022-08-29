@@ -1,0 +1,101 @@
+
+package cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard;
+
+
+public class Error
+        property "ads.typeId" "2"
+        property "de.generated" "true"
+{
+    public string code
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "code";
+    public string message
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "message";
+    public Error(string code, string message)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Error()
+                property "dataio.default" "true";
+}
+
+public class Input
+        property "ads.typeId" "1"
+        property "com.fasterxml.jackson.annotation.JsonPropertyOrder" "{clientAnnualRevenue,clientExistenceDuration,clientEmployeeNumber,clientIndustry}"
+        property "de.generated" "true"
+{
+    public double clientannualrevenue
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "clientAnnualRevenue";
+    public double clientemployeenumber
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "clientEmployeeNumber";
+    public double clientexistenceduration
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "clientExistenceDuration";
+    public double clientindustry
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "clientIndustry";
+    public Input(double clientannualrevenue, double clientemployeenumber, double clientexistenceduration, double clientindustry)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Input()
+                property "dataio.default" "true";
+}
+
+public class Output
+        property "ads.typeId" "3"
+        property "com.fasterxml.jackson.annotation.JsonIgnoreProperties" {
+            ignoreUnknown "true"
+        }
+        property "de.generated" "true"
+{
+    public cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Error error
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "error";
+    public java.lang.Double predictions
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "predictions";
+    public java.util.List scores domain 0,* class java.lang.Double
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "scores";
+    public Output(java.lang.Double predictions, 
+        java.util.List scores domain 0,* class java.lang.Double)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Output()
+                property "dataio.default" "true";
+    public void addTo_scores(java.lang.Double scores)
+                property collectionAttribute "scores"
+                property update "true";
+    public void clear_scores()
+                property collectionAttribute "scores"
+                property update "true";
+    public boolean inError()
+                property "de.generated" {
+                    $gen "com.ibm.decision.ml.integration.xom.InErrorTestGenerator",
+                    $target "BOM"
+                };
+    public void removeFrom_scores(java.lang.Double scores)
+                property collectionAttribute "scores"
+                property update "true";
+    public static Output run(cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Input input)
+                property pureFunction "true";
+    public static Output run(com.ibm.decision.run.RunContext runContext, cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Input input)
+                property "de.generated" {
+                    $gen "com.ibm.decision.ml.integration.xom.PredictionRunGenerator",
+                    $target "BOM",
+                    providerInfoId "cp4admin/Demo_Creditos/OPS16617795373546"
+                }
+                property pureFunction "true";
+    public void set_scores(java.util.Collection scores domain 0,* class java.lang.Double)
+                property collectionAttribute "scores"
+                property update "true";
+}
+

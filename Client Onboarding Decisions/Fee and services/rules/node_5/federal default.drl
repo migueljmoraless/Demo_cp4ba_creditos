@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>federal default</name>
+  <uuid>195a1244-abb3-4236-939d-b71544029274</uuid>
+  <documentation><![CDATA[Defines the list of available services for the industry Federal.]]></documentation>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the Industry of Services is Federal
+then
+	add Federal: Education Funding to decision ;
+    add Federal: Green Technology Equipment to decision ; 
+    add Federal: Infrastructure Consultation to decision ; 
+    add Federal: Transport Security  to decision ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>8128dc26-59d1-463f-8a69-bcd80417bd9c</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Services count">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Long" collection="false" name="Services count"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Services count" typeRef="java.lang.Long"/>
+    </inputData>
+    <decision id="node_1" name="Services subset">
+        <description>This decisions defines a list of services.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Long" collection="false" name="Services count"/>
+                <input bomType="Service" collection="true" name="Services list"/>
+                <output bomType="Service" collection="true" name="Services subset"/>
+                <rule defaultRule="false" href="node_1/initialize.drl" kind="BusinessRule" name="initialize"/>
+                <rule defaultRule="false" href="node_1/reduce%20list.drl" kind="BusinessRule" name="reduce list"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Services subset" typeRef="Service[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Services list">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="Service" collection="true" name="Services list"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Services list" typeRef="Service[]"/>
+    </inputData>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

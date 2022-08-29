@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>segment from size</name>
+  <uuid>466181b4-bda3-4d5a-bad1-881936a8c2e7</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+ the Annual Revenue of Client is less than 50000000
+then
+	set decision to "Segment 2" ;
+else 
+    set decision to "Segment 1" ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

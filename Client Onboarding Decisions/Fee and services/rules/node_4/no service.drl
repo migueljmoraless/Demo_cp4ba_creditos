@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>no service</name>
+  <uuid>08f67f45-e770-453f-8fdd-49277d88a044</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the number of elements in the services requested is 4
+	or Score is at least -1 and less than 1
+then
+	set decision to 0 ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

@@ -1,0 +1,123 @@
+
+# Term: Extended services
+@Extended\ services#plural = Extended services
+
+# Term: Services requested
+@Services\ requested#plural = Services requested
+
+# ClientInformation
+ClientInformation#concept.documentation = 
+ClientInformation#concept.label = Client Information
+ClientInformation.ClientInformation(java.lang.Long,java.lang.Long,boolean,java.lang.Long)#phrase.navigation = a new {Client Information} where {0, Annual Revenue} {1, Company Age} {2, Defaulted Payment} {3, Number of Employees}
+ClientInformation.annualRevenue#phrase.action = set the Annual Revenue of {this} to {Annual Revenue}
+ClientInformation.annualRevenue#phrase.addition_setter = add {Annual Revenue} to the Annual Revenue of {this}
+ClientInformation.annualRevenue#phrase.navigation = {Annual Revenue} of {this}
+ClientInformation.annualRevenue#phrase.subtraction_setter = subtract {Annual Revenue} from the Annual Revenue of {this}
+ClientInformation.companyAge#phrase.action = set the Company Age of {this} to {Company Age}
+ClientInformation.companyAge#phrase.addition_setter = add {Company Age} to the Company Age of {this}
+ClientInformation.companyAge#phrase.navigation = {Company Age} of {this}
+ClientInformation.companyAge#phrase.subtraction_setter = subtract {Company Age} from the Company Age of {this}
+ClientInformation.defaultedPayment#phrase.action[0] = {this} gets Defaulted Payment only if {Defaulted Payment}
+ClientInformation.defaultedPayment#phrase.action[1] = make it {Defaulted Payment} that {this} is Defaulted Payment
+ClientInformation.defaultedPayment#phrase.action[1].deprecated = true
+ClientInformation.defaultedPayment#phrase.navigation = {this} is Defaulted Payment
+ClientInformation.defaultedPayment#phrase.negative_predicate = {this} is not Defaulted Payment
+ClientInformation.defaultedPayment#phrase.negative_predicate_setter = {this} does not get Defaulted Payment
+ClientInformation.defaultedPayment#phrase.positive_predicate_setter = {this} gets Defaulted Payment
+ClientInformation.numberOfEmployees#phrase.action = set the Number of Employees of {this} to {Number of Employees}
+ClientInformation.numberOfEmployees#phrase.addition_setter = add {Number of Employees} to the Number of Employees of {this}
+ClientInformation.numberOfEmployees#phrase.navigation = {Number of Employees} of {this}
+ClientInformation.numberOfEmployees#phrase.subtraction_setter = subtract {Number of Employees} from the Number of Employees of {this}
+
+# Industry
+Industry#concept.label = Industry
+Industry.federal#instance.label = Federal
+Industry.finance#instance.label = Finance
+Industry.healthcare#instance.label = Healthcare
+Industry.insurance#instance.label = Insurance
+Industry.telecom#instance.label = Telecom
+
+# Scoreboard
+Scoreboard#concept.label = Scoreboard
+Scoreboard.Scoreboard(double,boolean,java.lang.String)#phrase.navigation = a new {Scoreboard} where {0, Confidence} {1, High risk} {2, Segment}
+Scoreboard.confidence#phrase.action = set the Confidence of {this} to {Confidence}
+Scoreboard.confidence#phrase.addition_setter = add {Confidence} to the Confidence of {this}
+Scoreboard.confidence#phrase.navigation = {Confidence} of {this}
+Scoreboard.confidence#phrase.subtraction_setter = subtract {Confidence} from the Confidence of {this}
+Scoreboard.highRisk#phrase.action[0] = {this} gets High risk only if {High risk}
+Scoreboard.highRisk#phrase.action[1] = make it {High risk} that {this} is High risk
+Scoreboard.highRisk#phrase.action[1].deprecated = true
+Scoreboard.highRisk#phrase.navigation = {this} is High risk
+Scoreboard.highRisk#phrase.negative_predicate = {this} is not High risk
+Scoreboard.highRisk#phrase.negative_predicate_setter = {this} does not get High risk
+Scoreboard.highRisk#phrase.positive_predicate_setter = {this} gets High risk
+Scoreboard.segment#phrase.action = set the Segment of {this} to {Segment}
+Scoreboard.segment#phrase.navigation = {Segment} of {this}
+
+# Service
+Service#concept.label = Service
+Service.businessDevices#instance.documentation = Telecom : Business Devices
+Service.businessDevices#instance.label = Telecom: Business Devices
+Service.communicationEquipment#instance.documentation = Telecom
+Service.communicationEquipment#instance.label = Telecom: Communication Equipment
+Service.corporateCreditCard#instance.documentation = Finance
+Service.corporateCreditCard#instance.label = Finance: Corporate Credit Card
+Service.educationFunding#instance.documentation = 
+Service.educationFunding#instance.label = Federal: Education Funding
+Service.employeeBenefitsPlan#instance.documentation = heathcare
+Service.employeeBenefitsPlan#instance.label = Healthcare: Employee Benefits Plan
+Service.externalAudit#instance.documentation = Finance
+Service.externalAudit#instance.label = Finance: External Audit
+Service.fibreInternet#instance.documentation = Telecom
+Service.fibreInternet#instance.label = Telecom: Fibre Internet
+Service.fraudProtection#instance.documentation = Finance
+Service.fraudProtection#instance.label = Finance: Fraud Protection
+Service.greenTechnologyEquipment#instance.documentation = Federal
+Service.greenTechnologyEquipment#instance.label = Federal: Green Technology Equipment
+Service.infrastructureConsultation#instance.documentation = Federal
+Service.infrastructureConsultation#instance.label = Federal: Infrastructure Consultation
+Service.loanInsurance#instance.documentation = Insurance
+Service.loanInsurance#instance.label = Insurance: Loan Insurance
+Service.medicalInsurance#instance.documentation = Insurance
+Service.medicalInsurance#instance.label = Insurance: Medical Insurance
+Service.mentalHealthCare#instance.documentation = Healthcare
+Service.mentalHealthCare#instance.label = Healthcare: Mental Health Care
+Service.merchandiseInsurance#instance.documentation = Insurance
+Service.merchandiseInsurance#instance.label = Insurance: Merchandise Insurance
+Service.onsiteMedicalTesting#instance.documentation = Healthcare
+Service.onsiteMedicalTesting#instance.label = Healthcare: On-site Medical Testing
+Service.taxConsultation#instance.documentation = Finance
+Service.taxConsultation#instance.label = Finance: Tax Consultation
+Service.tielineSolution#instance.documentation = Telecom
+Service.tielineSolution#instance.label = Telecom: Tie-line Solution
+Service.transportSecurity#instance.documentation = Federal
+Service.transportSecurity#instance.label = Federal: Transport Security
+Service.virtualMedicalAssistance#instance.documentation = Healthcare
+Service.virtualMedicalAssistance#instance.label = Healthcare: Virtual Medical Assistance
+Service.warehouseInsurance#instance.documentation = Insurance
+Service.warehouseInsurance#instance.label = Insurance: Warehouse Insurance
+
+# ServiceInformation
+ServiceInformation#concept.label = Service Information
+ServiceInformation.ServiceInformation(java.util.List,java.lang.Long)#phrase.navigation = a new {Service Information} where {0, Extended services} {1, Services Fee}
+ServiceInformation.addTo_extendedServices(Service)#phrase.action = add {0} to the Extended services of {this}
+ServiceInformation.clear_extendedServices()#phrase.action = clear the Extended services of {this}
+ServiceInformation.extendedServices#phrase.action = set the Extended services of {this} to {Extended services}
+ServiceInformation.extendedServices#phrase.navigation = {Extended services} of {this}
+ServiceInformation.removeFrom_extendedServices(Service)#phrase.action = remove {0} from the Extended services of {this}
+ServiceInformation.servicesFee#phrase.action = set the Services Fee of {this} to {Services Fee}
+ServiceInformation.servicesFee#phrase.addition_setter = add {Services Fee} to the Services Fee of {this}
+ServiceInformation.servicesFee#phrase.navigation = {Services Fee} of {this}
+ServiceInformation.servicesFee#phrase.subtraction_setter = subtract {Services Fee} from the Services Fee of {this}
+
+# ServiceRequest
+ServiceRequest#concept.label = Service Request
+ServiceRequest.ServiceRequest(Industry,java.util.List)#phrase.navigation = a new {Service Request} where {0, Industry} {1, Services requested}
+ServiceRequest.addTo_servicesRequested(Service)#phrase.action = add {0} to the Services requested of {this}
+ServiceRequest.clear_servicesRequested()#phrase.action = clear the Services requested of {this}
+ServiceRequest.industry#phrase.action = set the Industry of {this} to {Industry}
+ServiceRequest.industry#phrase.clearer = clear the Industry of {this}
+ServiceRequest.industry#phrase.navigation = {Industry} of {this}
+ServiceRequest.removeFrom_servicesRequested(Service)#phrase.action = remove {0} from the Services requested of {this}
+ServiceRequest.servicesRequested#phrase.action = set the Services requested of {this} to {Services requested}
+ServiceRequest.servicesRequested#phrase.navigation = {Services requested} of {this}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>apply score rate</name>
+  <uuid>e77d1b67-6e7d-4989-8b87-bbddd28cf084</uuid>
+  <documentation><![CDATA[Calculates the fees for the services based on the services and score rate. The result is rounded to output as integer.]]></documentation>
+  <locale>en_US</locale>
+  <definition><![CDATA[
+	set decision to round ( decision * 'Score rate', 0 );]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

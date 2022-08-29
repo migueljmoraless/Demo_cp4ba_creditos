@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>initialize</name>
+  <uuid>5023a410-153f-4e7b-b090-810a513580aa</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to an empty list of Services ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

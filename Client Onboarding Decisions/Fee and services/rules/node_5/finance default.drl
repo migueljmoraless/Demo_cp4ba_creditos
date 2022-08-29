@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>finance default</name>
+  <uuid>3e9597a7-e821-4224-86aa-cc97764c9c0c</uuid>
+  <documentation><![CDATA[Defines the list of available services for the industry Finance.]]></documentation>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the Industry of Services is Finance 
+then
+	add Finance: Corporate Credit Card to decision ;
+    add Finance: External Audit to decision ; 
+    add Finance: Fraud Protection to decision ; 
+    add Finance: Tax Consultation to decision ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

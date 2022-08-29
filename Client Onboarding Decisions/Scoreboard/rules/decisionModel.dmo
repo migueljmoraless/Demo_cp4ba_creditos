@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>39e854c3-273d-4fa0-a3a7-cdfbd6c2d3c8</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Client">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="ClientInformation" collection="false" name="Client"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Client" typeRef="ClientInformation"/>
+    </inputData>
+    <decision id="node_1" name="Predictive risk">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="ClientInformation" collection="false" name="Client"/>
+                <input bomType="Industry" collection="false" name="Industry"/>
+                <output bomType="Scoreboard" collection="false" name="Predictive risk"/>
+                <rule defaultRule="false" href="node_1/predictive%20risk.drl" kind="BusinessRule" name="predictive risk"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Predictive risk" typeRef="Scoreboard"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_7"/>
+        </knowledgeRequirement>
+    </decision>
+    <inputData id="node_2" name="Industry">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="Industry" collection="false" name="Industry"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Industry" typeRef="Industry"/>
+    </inputData>
+    <decision id="node_4" name="Scoreboard">
+        <description>This decision builds a score from the risk level. It outputs a risk message and involves the machine learning prediction.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="Scoreboard" collection="false" name="Predictive risk"/>
+                <input bomType="java.lang.String" collection="false" name="Segment category"/>
+                <output bomType="Scoreboard" collection="false" name="Scoreboard"/>
+                <rule defaultRule="false" href="node_4/create%20scoreboard.drl" kind="BusinessRule" name="create scoreboard"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Scoreboard" typeRef="Scoreboard"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Segment category">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="ClientInformation" collection="false" name="Client"/>
+                <output bomType="java.lang.String" collection="false" name="Segment category"/>
+                <rule defaultRule="false" href="node_6/segment%20from%20size.drl" kind="BusinessRule" name="segment from size"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Segment category" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <businessKnowledgeModel id="node_7" name="Machine learning scoreboard">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[prediction]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Machine learning scoreboard" typeRef="Scoreboard"/>
+        <encapsulatedLogic typeRef="Scoreboard">
+            <formalParameter name="clientInformation" typeRef="ClientInformation"/>
+            <formalParameter name="industry" typeRef="Industry"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"decisions.client_onboarding.client_onboarding_decisions.test.MachineLearningScoreboard"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(ClientInformation,Industry)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

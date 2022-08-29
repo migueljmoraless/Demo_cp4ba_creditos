@@ -1,0 +1,243 @@
+
+
+public class ClientInformation
+        property "ads.typeId" "1"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "ClientInformation"
+        property "de.generated" "true"
+{
+    public java.lang.Long annualRevenue
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "annualRevenue"
+                property update "true";
+    public java.lang.Long companyAge
+                property "ads.attributeId" "5"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "companyAge"
+                property update "true";
+    public boolean defaultedPayment
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "defaultedPayment"
+                property update "true";
+    public java.lang.Long numberOfEmployees
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "numberOfEmployees"
+                property update "true";
+    public ClientInformation(java.lang.Long annualRevenue, java.lang.Long companyAge, boolean defaultedPayment, java.lang.Long numberOfEmployees)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public ClientInformation()
+                property "dataio.default" "true";
+}
+
+public class Industry
+        extends java.lang.Enum
+        property "ads.typeId" "2"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Industry"
+        property "de.generated" "true"
+{
+    domain {static federal, static finance, static healthcare, static insurance, static telecom}
+    public static final readonly Industry federal
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Federal";
+    public static final readonly Industry finance
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Finance";
+    public static final readonly Industry healthcare
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Healthcare";
+    public static final readonly Industry insurance
+                property "ads.attributeId" "5"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Insurance";
+    public static final readonly Industry telecom
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Telecom";
+}
+
+public class Scoreboard
+        property "ads.typeId" "5"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Scoreboard"
+        property "de.generated" "true"
+{
+    public double confidence
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "confidence"
+                property update "true";
+    public boolean highRisk
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "highRisk"
+                property update "true";
+    public string segment
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "segment"
+                property update "true";
+    public Scoreboard(double confidence, boolean highRisk, string segment)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Scoreboard()
+                property "dataio.default" "true";
+}
+
+public class Service
+        extends java.lang.Enum
+        property "ads.typeId" "4"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Service"
+        property "de.generated" "true"
+{
+    domain 
+    {
+        static businessDevices,
+        static communicationEquipment,
+        static corporateCreditCard,
+        static educationFunding,
+        static employeeBenefitsPlan,
+        static externalAudit,
+        static fibreInternet,
+        static fraudProtection,
+        static greenTechnologyEquipment,
+        static infrastructureConsultation,
+        static loanInsurance,
+        static medicalInsurance,
+        static mentalHealthCare,
+        static merchandiseInsurance,
+        static onsiteMedicalTesting,
+        static taxConsultation,
+        static tielineSolution,
+        static transportSecurity,
+        static virtualMedicalAssistance,
+        static warehouseInsurance
+    }
+    public static final readonly Service businessDevices
+                property "ads.attributeId" "15"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Business Devices";
+    public static final readonly Service communicationEquipment
+                property "ads.attributeId" "16"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Communication Equipment";
+    public static final readonly Service corporateCreditCard
+                property "ads.attributeId" "9"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Corporate Credit Card";
+    public static final readonly Service educationFunding
+                property "ads.attributeId" "19"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Education Funding";
+    public static final readonly Service employeeBenefitsPlan
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Employee Benefits Plan";
+    public static final readonly Service externalAudit
+                property "ads.attributeId" "12"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "External Audit";
+    public static final readonly Service fibreInternet
+                property "ads.attributeId" "13"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Fibre Internet";
+    public static final readonly Service fraudProtection
+                property "ads.attributeId" "10"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Fraud Protection";
+    public static final readonly Service greenTechnologyEquipment
+                property "ads.attributeId" "20"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Green Technology Equipment";
+    public static final readonly Service infrastructureConsultation
+                property "ads.attributeId" "17"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Infrastructure Consultation";
+    public static final readonly Service loanInsurance
+                property "ads.attributeId" "6"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Loan Insurance";
+    public static final readonly Service medicalInsurance
+                property "ads.attributeId" "8"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Medical Insurance";
+    public static final readonly Service mentalHealthCare
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Mental Health Care";
+    public static final readonly Service merchandiseInsurance
+                property "ads.attributeId" "7"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Merchandise Insurance";
+    public static final readonly Service onsiteMedicalTesting
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Onsite Medical Testing";
+    public static final readonly Service taxConsultation
+                property "ads.attributeId" "11"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Tax Consultation";
+    public static final readonly Service tielineSolution
+                property "ads.attributeId" "14"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Tieline Solution";
+    public static final readonly Service transportSecurity
+                property "ads.attributeId" "18"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Transport Security";
+    public static final readonly Service virtualMedicalAssistance
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Virtual Medical Assistance";
+    public static final readonly Service warehouseInsurance
+                property "ads.attributeId" "5"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Warehouse Insurance";
+}
+
+public class ServiceInformation
+        property "ads.typeId" "3"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "ServiceInformation"
+        property "de.generated" "true"
+{
+    public java.util.List extendedServices domain 0,* class Service
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "extendedServices"
+                property update "true";
+    public java.lang.Long servicesFee
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "servicesFee"
+                property update "true";
+    public ServiceInformation(java.util.List extendedServices domain 0,* class Service, 
+        java.lang.Long servicesFee)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public ServiceInformation()
+                property "dataio.default" "true";
+    public void addTo_extendedServices(Service extendedServices)
+                property collectionAttribute "extendedServices"
+                property update "true";
+    public void clear_extendedServices()
+                property collectionAttribute "extendedServices"
+                property update "true";
+    public void removeFrom_extendedServices(Service extendedServices)
+                property collectionAttribute "extendedServices"
+                property update "true";
+    public void set_extendedServices(java.util.Collection extendedServices domain 0,* class Service)
+                property collectionAttribute "extendedServices"
+                property update "true";
+}
+
+public class ServiceRequest
+        property "ads.typeId" "6"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "ServiceRequest"
+        property "de.generated" "true"
+{
+    public Industry industry
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Industry"
+                property update "true";
+    public java.util.List servicesRequested domain 0,* class Service
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "servicesRequested"
+                property update "true";
+    public ServiceRequest(Industry industry, 
+        java.util.List servicesRequested domain 0,* class Service)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public ServiceRequest()
+                property "dataio.default" "true";
+    public void addTo_servicesRequested(Service servicesRequested)
+                property collectionAttribute "servicesRequested"
+                property update "true";
+    public void clear_servicesRequested()
+                property collectionAttribute "servicesRequested"
+                property update "true";
+    public void removeFrom_servicesRequested(Service servicesRequested)
+                property collectionAttribute "servicesRequested"
+                property update "true";
+    public void set_servicesRequested(java.util.Collection servicesRequested domain 0,* class Service)
+                property collectionAttribute "servicesRequested"
+                property update "true";
+}
+

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>9ea400d3-69a0-4dd5-8ddb-2b32d7bc16da</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Client">
+        <description>Client details such as company age, number of employees, annual revenue ...</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="ClientInformation" collection="false" name="Client"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Client" typeRef="ClientInformation"/>
+    </inputData>
+    <decision id="node_1" name="Fee and services">
+        <description>This is the final decision that determines the fees of the services requested and a suggestion for additional services to onboard.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Long" collection="false" name="Fee"/>
+                <input bomType="Service" collection="true" name="Additional services"/>
+                <output bomType="ServiceInformation" collection="false" name="Fee and services"/>
+                <rule defaultRule="false" href="node_1/set%20extended%20services.drl" kind="BusinessRule" name="set extended services"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Fee and services" typeRef="ServiceInformation"/>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="Services">
+        <description>The list of services requested by the client at the start of the onboarding. The services depend on the type of industry.</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="ServiceRequest" collection="false" name="Services"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Services" typeRef="ServiceRequest"/>
+    </inputData>
+    <decision id="node_3" name="Score">
+        <description>This decision calculates a score by consolidating the scores from the client information and the number of services requested. </description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sum">
+                <input bomType="ClientInformation" collection="false" name="Client"/>
+                <input bomType="ServiceRequest" collection="false" name="Services"/>
+                <output bomType="java.lang.Long" collection="false" name="Score"/>
+                <rule defaultRule="false" href="node_3/revenue%20score.dmt" kind="DecisionTable" name="revenue score"/>
+                <rule defaultRule="false" href="node_3/size%20score.dmt" kind="DecisionTable" name="size score"/>
+                <rule defaultRule="false" href="node_3/defaulted%20score.drl" kind="BusinessRule" name="defaulted score"/>
+                <rule defaultRule="false" href="node_3/age%20score.dmt" kind="DecisionTable" name="age score"/>
+                <rule defaultRule="false" href="node_3/services%20score.drl" kind="BusinessRule" name="services score"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Score" typeRef="java.lang.Long"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="Complementary services">
+        <description>This decision defines which services to suggest as an additional offer to the client.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="ServiceRequest" collection="false" name="Services"/>
+                <output bomType="Service" collection="true" name="Complementary services"/>
+                <rule defaultRule="false" href="node_5/federal%20default.drl" kind="BusinessRule" name="federal default"/>
+                <rule defaultRule="false" href="node_5/finance%20default.drl" kind="BusinessRule" name="finance default"/>
+                <rule defaultRule="false" href="node_5/healthcare%20default.drl" kind="BusinessRule" name="healthcare default"/>
+                <rule defaultRule="false" href="node_5/insurance%20default.drl" kind="BusinessRule" name="insurance default"/>
+                <rule defaultRule="false" href="node_5/telecom%20default.drl" kind="BusinessRule" name="telecom default"/>
+                <rule defaultRule="false" href="node_5/filter%20requested.drl" kind="BusinessRule" name="filter requested"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Complementary services" typeRef="Service[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Fee">
+        <description>This decision calculates the fees of the additional offer based on the number of services and the score rate.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="ServiceRequest" collection="false" name="Services"/>
+                <input bomType="java.lang.Double" collection="false" name="Score rate"/>
+                <output bomType="java.lang.Long" collection="false" name="Fee"/>
+                <rule defaultRule="false" href="node_6/Default%20service%20fees.dmt" kind="DecisionTable" name="Default service fees"/>
+                <rule defaultRule="false" href="node_6/apply%20score%20rate.drl" kind="BusinessRule" name="apply score rate"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Fee" typeRef="java.lang.Long"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Score rate">
+        <description>This decision calculates a rate from the score.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Long" collection="false" name="Score"/>
+                <output bomType="java.lang.Double" collection="false" name="Score rate"/>
+                <rule defaultRule="false" href="node_7/compute%20rate.dmt" kind="DecisionTable" name="compute rate"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Score rate" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_8" name="Additional services count">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="Score rate"/>
+                <output bomType="java.lang.Long" collection="false" name="Additional services count"/>
+                <rule defaultRule="false" href="node_8/compute%20services%20count.drl" kind="BusinessRule" name="compute services count"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_8_ii" name="Additional services count" typeRef="java.lang.Long"/>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="Additional services">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="Service" collection="true" name="Complementary services"/>
+                <input bomType="java.lang.Long" collection="false" name="Additional services count"/>
+                <output bomType="Service" collection="true" name="Additional services"/>
+                <rule defaultRule="false" href="node_10/take%20services.drl" kind="BusinessRule" name="take services"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Additional services" typeRef="Service[]"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+        <knowledgeRequirement>
+            <requiredKnowledge href="#node_9"/>
+        </knowledgeRequirement>
+    </decision>
+    <businessKnowledgeModel id="node_9" name="Services subset">
+        <extensionElements>
+            <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <property name="ads.designer.bkKind"><![CDATA[decision]]></property>
+            </properties>
+        </extensionElements>
+        <variable name="Services subset" typeRef="Service[]"/>
+        <encapsulatedLogic typeRef="Service[]">
+            <formalParameter name="servicesCount" typeRef="java.lang.Long"/>
+            <formalParameter name="servicesList" typeRef="Service[]"/>
+            <context>
+                <contextEntry>
+                    <variable name="class"/>
+                    <literalExpression>
+                        <text>"decisions.client_onboarding.client_onboarding_decisions.listpart.ServicesSubset"</text>
+                    </literalExpression>
+                </contextEntry>
+                <contextEntry>
+                    <variable name="method signature"/>
+                    <literalExpression>
+                        <text>"run(java.lang.Long,java.util.List)"</text>
+                    </literalExpression>
+                </contextEntry>
+            </context>
+        </encapsulatedLogic>
+    </businessKnowledgeModel>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

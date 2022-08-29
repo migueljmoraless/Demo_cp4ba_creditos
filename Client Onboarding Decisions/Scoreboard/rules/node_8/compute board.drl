@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>compute board</name>
+  <uuid>90e4d6ae-4069-49ae-94b8-5be97f655c0a</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to the rules scoreboard computed from
+      industry being <industry>, 
+      client being <client> ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
