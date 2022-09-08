@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="decisions.client_onboarding.client_onboarding_decisions:machineLearningScoreboard" ruleAppVersion="LATEST-SNAPSHOT" packageName="decisions.client_onboarding.client_onboarding_decisions.test" managingXom="true">
-  <name>machineLearningScoreboard</name>
-  <uuid>7e3f5eb3-8bfa-448f-841b-59b08300b835</uuid>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="cp4badmin.client_onboarding.client_onboarding_decisions:machineLearningScoreboard" ruleAppVersion="LATEST-SNAPSHOT" packageName="cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1" managingXom="true">
+  <name>Machine-learning-scoreboard</name>
+  <uuid>74879939-c0bc-499b-9ffc-fcad2a6ae013</uuid>
   <locales>en_US</locales>
   <operations operationName="operation">
-    <operation href="operation.dop#43b7576a-5c26-4657-966a-8b66c908203f"/>
+    <operation href="operation.dop#dd3bcf75-7486-4d35-81a1-5a186e8b868c"/>
     <properties key="ruleset.version">
       <value><![CDATA[1.0]]></value>
     </properties>

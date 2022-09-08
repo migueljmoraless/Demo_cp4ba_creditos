@@ -60,7 +60,7 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Text><![CDATA[the Number of Employees of Client is at least <a number>]]></Text>
+                        <Text><![CDATA[<a number> is at least <a number>]]></Text>
                         <Param><![CDATA[8000]]></Param>
                     </Expression>
                     <ActionSet>
@@ -73,69 +73,41 @@
                 </Condition>
                 <Condition>
                     <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression/>
-                        </Action>
-                    </ActionSet>
+                    <ActionSet/>
                 </Condition>
                 <Condition>
                     <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression/>
-                        </Action>
-                    </ActionSet>
+                    <ActionSet/>
                 </Condition>
                 <Condition>
                     <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression/>
-                        </Action>
-                    </ActionSet>
+                    <ActionSet/>
                 </Condition>
                 <Condition>
                     <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression/>
-                        </Action>
-                    </ActionSet>
+                    <ActionSet/>
                 </Condition>
                 <Condition>
                     <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression/>
-                        </Action>
-                    </ActionSet>
+                    <ActionSet/>
                 </Condition>
                 <Condition>
                     <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression/>
-                        </Action>
-                    </ActionSet>
+                    <ActionSet/>
                 </Condition>
                 <Condition>
                     <Expression/>
-                    <ActionSet>
-                        <Action DefId="A0">
-                            <Expression/>
-                        </Action>
-                    </ActionSet>
+                    <ActionSet/>
                 </Condition>
             </Partition>
         </Contents>
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Score]]></Data>
-            <Data Name="Definitions(A0)#Width"><![CDATA[80]]></Data>
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[Number of Employees]]></Data>
-            <Data Name="Definitions(C0)#Width"><![CDATA[162]]></Data>
+            <Data Name="Definitions(A0)#Width"><![CDATA[265]]></Data>
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Score]]></Data>
+            <Data Name="Definitions(C0)#Width"><![CDATA[280]]></Data>
         </ResourceSet>
     </Resources>
 </DT></definition>

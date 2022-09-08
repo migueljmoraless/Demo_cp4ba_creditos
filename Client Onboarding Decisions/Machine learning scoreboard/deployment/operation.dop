@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="operation" targetRuleProjectName="Machine learning scoreboard">
-  <name>machineLearningScoreboard</name>
-  <uuid>43b7576a-5c26-4657-966a-8b66c908203f</uuid>
-  <decisionModel href="../rules/decisionModel.dmo#339332bd-40d2-4b38-899d-5ca2145daf99"/>
-  <targetRuleProject href="../../Machine%20learning%20scoreboard#a006c2aa-06a5-4941-bdd7-2bd010db47b2"/>
+  <name>Machine-learning-scoreboard</name>
+  <uuid>dd3bcf75-7486-4d35-81a1-5a186e8b868c</uuid>
+  <decisionModel href="../rules/decisionModel.dmo#e458a92f-35e1-41f3-8d90-95efa48bd8b8"/>
+  <targetRuleProject href="../../Machine%20learning%20scoreboard#b04cf80c-99b3-41e8-9894-de93f3cc4e51"/>
   <tags key="ProviderType">
     <value><![CDATA[OPS]]></value>
   </tags>
-  <tags key="operationDescription">
-    <value><![CDATA[""]]></value>
-  </tags>
-  <tags key="operationName">
-    <value><![CDATA["machineLearningScoreboard"]]></value>
-  </tags>
-  <tags key="exposedAtRuntime">
-    <value><![CDATA[true]]></value>
+  <tags key="ProviderId">
+    <value><![CDATA[disconnectedProvider]]></value>
   </tags>
 </com.ibm.rules.studio.model.decisionservice:Operation>
