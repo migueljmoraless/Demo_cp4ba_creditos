@@ -1,5 +1,5 @@
 
-package cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard;
+package cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard;
 
 
 public class Error
@@ -54,7 +54,7 @@ public class Output
         }
         property "de.generated" "true"
 {
-    public cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Error error
+    public cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Error error
                 property "ads.attributeId" "3"
                 property "com.fasterxml.jackson.annotation.JsonProperty" "error";
     public java.lang.Double predictions
@@ -85,13 +85,13 @@ public class Output
     public void removeFrom_scores(java.lang.Double scores)
                 property collectionAttribute "scores"
                 property update "true";
-    public static Output run(cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Input input)
+    public static Output run(cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Input input)
                 property pureFunction "true";
-    public static Output run(com.ibm.decision.run.RunContext runContext, cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Input input)
+    public static Output run(com.ibm.decision.run.RunContext runContext, cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Input input)
                 property "de.generated" {
                     $gen "com.ibm.decision.ml.integration.xom.PredictionRunGenerator",
                     $target "BOM",
-                    providerInfoId "cp4admin/Demo_Creditos/OPS16617795373546"
+                    providerInfoId "cp4admin/Client-Onboarding/OPS16626124469046"
                 }
                 property pureFunction "true";
     public void set_scores(java.util.Collection scores domain 0,* class java.lang.Double)

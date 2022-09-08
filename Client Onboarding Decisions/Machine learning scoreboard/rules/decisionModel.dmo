@@ -21,12 +21,12 @@
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="ClientInformation" collection="false" name="Client information"/>
                 <input bomType="Industry" collection="false" name="Industry"/>
-                <output bomType="cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Input" collection="false" name="Input mapping"/>
+                <output bomType="cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Input" collection="false" name="Input mapping"/>
                 <rule defaultRule="false" href="input-mapping/set%20client%20input.drl" kind="BusinessRule" name="set client input"/>
                 <rule defaultRule="false" href="input-mapping/set%20industry.dmt" kind="DecisionTable" name="set industry"/>
             </ruleset>
         </extensionElements>
-        <variable id="input_mapping_ii" name="Input mapping" typeRef="cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Input"/>
+        <variable id="input_mapping_ii" name="Input mapping" typeRef="cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Input"/>
         <informationRequirement>
             <requiredInput href="#input"/>
         </informationRequirement>
@@ -38,15 +38,15 @@
         <description>ML model output</description>
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Input" collection="false" name="Input mapping"/>
-                <output bomType="cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Output" collection="false" name="ML model invocation"/>
+                <input bomType="cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Input" collection="false" name="Input mapping"/>
+                <output bomType="cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Output" collection="false" name="ML model invocation"/>
                 <rule defaultRule="false" href="decisionModel.drl" kind="BusinessRule" name="Prediction"/>
             </ruleset>
             <properties xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
                 <property name="ads.designer.predictionInvocation"><![CDATA[true]]></property>
             </properties>
         </extensionElements>
-        <variable id="output_ii" name="ML model invocation" typeRef="cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Output"/>
+        <variable id="output_ii" name="ML model invocation" typeRef="cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Output"/>
         <informationRequirement>
             <requiredInput href="#input-mapping"/>
         </informationRequirement>
@@ -54,7 +54,7 @@
     <decision id="output-mapping" name="Output mapping">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="first">
-                <input bomType="cp4admin.demo_creditos.client_onboarding_decisions.machineLearningScoreboard.Output" collection="false" name="ML model invocation"/>
+                <input bomType="cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Output" collection="false" name="ML model invocation"/>
                 <output bomType="Scoreboard" collection="false" name="Output mapping"/>
                 <rule defaultRule="false" href="output-mapping/default%20scoreboard.drl" kind="BusinessRule" name="default scoreboard"/>
                 <rule defaultRule="false" href="output-mapping/get%20machine%20learning%20output.drl" kind="BusinessRule" name="get machine learning output"/>

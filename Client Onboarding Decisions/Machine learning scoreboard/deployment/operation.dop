@@ -7,13 +7,4 @@
   <tags key="ProviderType">
     <value><![CDATA[OPS]]></value>
   </tags>
-  <tags key="operationDescription">
-    <value><![CDATA[""]]></value>
-  </tags>
-  <tags key="operationName">
-    <value><![CDATA["machineLearningScoreboard"]]></value>
-  </tags>
-  <tags key="exposedAtRuntime">
-    <value><![CDATA[true]]></value>
-  </tags>
 </com.ibm.rules.studio.model.decisionservice:Operation>

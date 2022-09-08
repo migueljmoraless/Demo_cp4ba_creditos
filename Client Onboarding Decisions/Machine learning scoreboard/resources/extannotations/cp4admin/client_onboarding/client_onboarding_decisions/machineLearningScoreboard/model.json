@@ -1,0 +1,60 @@
+{
+  "name" : "service-payment-default-risk",
+  "id" : "6",
+  "version" : "V1",
+  "modifiedAt" : "2022-08-29T13:16:04.087192Z",
+  "trainedAt" : "2022-08-29T13:16:04.087192Z",
+  "description" : "",
+  "inputSchema" : {
+    "id" : "input_id",
+    "name" : "input for service-payment-default-risk",
+    "type" : "struct",
+    "fields" : [ {
+      "name" : "clientAnnualRevenue",
+      "type" : "float64",
+      "nullable" : false
+    }, {
+      "name" : "clientExistenceDuration",
+      "type" : "float64",
+      "nullable" : false
+    }, {
+      "name" : "clientEmployeeNumber",
+      "type" : "float64",
+      "nullable" : false
+    }, {
+      "name" : "clientIndustry",
+      "type" : "float64",
+      "nullable" : false
+    } ]
+  },
+  "outputSchema" : {
+    "id" : "output_id",
+    "name" : "output for service-payment-default-risk",
+    "type" : "struct",
+    "fields" : [ {
+      "name" : "attributes",
+      "type" : "object",
+      "nullable" : false
+    } ]
+  },
+  "metadata" : {
+    "description" : "Sample service risk predictive model",
+    "metrics" : [ {
+      "name" : "Coefficient of determination R^2",
+      "value" : 0.9975
+    }, {
+      "name" : "Root Mean Squared Error (RMSE)",
+      "value" : 0.0025
+    }, {
+      "name" : "Accuracy",
+      "value" : 0.9975
+    }, {
+      "name" : "Balanced accuracy",
+      "value" : 0.9951272824020239
+    }, {
+      "name" : "Confusion Matrix",
+      "value" : "[[1748, 3], [2, 247]]"
+    } ],
+    "author" : "Pierre Feillet"
+  }
+}
