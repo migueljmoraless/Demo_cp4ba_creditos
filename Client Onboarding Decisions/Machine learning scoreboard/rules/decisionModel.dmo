@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
-  <name>Machine learning scoreboard 1</name>
-  <uuid>e458a92f-35e1-41f3-8d90-95efa48bd8b8</uuid>
+  <name>test</name>
+  <uuid>339332bd-40d2-4b38-899d-5ca2145daf99</uuid>
   <locale>en_US</locale>
-  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="Decisions" name="machineLearningScoreboard1" namespace="">
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="Decisions" name="test" namespace="">
     <extensionElements>
         <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
     </extensionElements>
-    <inputData id="input" name="Industry">
+    <inputData id="input" name="Client information">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="Industry" collection="false" name="Industry"/>
+                <output bomType="ClientInformation" collection="false" name="Client information"/>
             </initialization>
         </extensionElements>
-        <variable id="input_ii" name="Industry" typeRef="Industry"/>
+        <variable id="input_ii" name="Client information" typeRef="ClientInformation"/>
     </inputData>
     <decision id="input-mapping" name="Input mapping">
         <description>ML model input</description>
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="Industry" collection="false" name="Industry"/>
                 <input bomType="ClientInformation" collection="false" name="Client information"/>
+                <input bomType="Industry" collection="false" name="Industry"/>
                 <output bomType="cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Input" collection="false" name="Input mapping"/>
                 <rule defaultRule="false" href="input-mapping/set%20client%20input.drl" kind="BusinessRule" name="set client input"/>
                 <rule defaultRule="false" href="input-mapping/set%20industry.dmt" kind="DecisionTable" name="set industry"/>
@@ -56,8 +56,8 @@
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="first">
                 <input bomType="cp4admin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard.Output" collection="false" name="ML model invocation"/>
                 <output bomType="Scoreboard" collection="false" name="Output mapping"/>
-                <rule defaultRule="false" href="output-mapping/get%20machine%20learning%20output.drl" kind="BusinessRule" name="get machine learning output"/>
                 <rule defaultRule="false" href="output-mapping/default%20scoreboard.drl" kind="BusinessRule" name="default scoreboard"/>
+                <rule defaultRule="false" href="output-mapping/get%20machine%20learning%20output.drl" kind="BusinessRule" name="get machine learning output"/>
             </ruleset>
         </extensionElements>
         <variable id="output_mapping_ii" name="Output mapping" typeRef="Scoreboard"/>
@@ -65,13 +65,13 @@
             <requiredInput href="#output"/>
         </informationRequirement>
     </decision>
-    <inputData id="node_1" name="Client information">
+    <inputData id="node_1" name="Industry">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="ClientInformation" collection="false" name="Client information"/>
+                <output bomType="Industry" collection="false" name="Industry"/>
             </initialization>
         </extensionElements>
-        <variable id="node_1_ii" name="Client information" typeRef="ClientInformation"/>
+        <variable id="node_1_ii" name="Industry" typeRef="Industry"/>
     </inputData>
 </definitions></definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>

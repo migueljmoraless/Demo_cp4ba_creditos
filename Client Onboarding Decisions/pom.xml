@@ -15,11 +15,11 @@
         <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
     <engine-api.version>2.10.0</engine-api.version>
         <buildTime>${maven.build.timestamp}</buildTime>
-        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
-    <junit.jupiter.version>5.8.0</junit.jupiter.version>
+        <junit.jupiter.version>5.8.0</junit.jupiter.version>
         <jackson.version>2.12.6</jackson.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencyManagement>

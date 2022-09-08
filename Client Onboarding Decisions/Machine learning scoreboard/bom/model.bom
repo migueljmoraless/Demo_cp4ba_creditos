@@ -91,7 +91,7 @@ public class Output
                 property "de.generated" {
                     $gen "com.ibm.decision.ml.integration.xom.PredictionRunGenerator",
                     $target "BOM",
-                    providerInfoId "cp4admin/Client-Onboarding/OPS16626525237106"
+                    providerInfoId "cp4admin/Client-Onboarding/OPS16626564165336"
                 }
                 property pureFunction "true";
     public void set_scores(java.util.Collection scores domain 0,* class java.lang.Double)

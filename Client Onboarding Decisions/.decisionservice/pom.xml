@@ -22,7 +22,7 @@
             <version>LATEST-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>cp4badmin.client_onboarding.client_onboarding_decisions</groupId>
+            <groupId>decisions.client_onboarding.client_onboarding_decisions</groupId>
             <artifactId>machineLearningScoreboard</artifactId>
             <version>LATEST-SNAPSHOT</version>
         </dependency>
@@ -50,27 +50,6 @@
     </dependencies>
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <build>
         <resources>
@@ -115,7 +94,7 @@
                                     <outputDirectory>${project.build.directory}/classes</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>cp4badmin.client_onboarding.client_onboarding_decisions</groupId>
+                                    <groupId>decisions.client_onboarding.client_onboarding_decisions</groupId>
                                     <artifactId>machineLearningScoreboard</artifactId>
                                     <version>LATEST-SNAPSHOT</version>
                                     <type>jar</type>

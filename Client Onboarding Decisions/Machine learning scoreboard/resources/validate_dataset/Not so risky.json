@@ -1,9 +1,8 @@
 {
   "clientInformation": {
-    "annualRevenue": 30000000,
-    "companyAge": 5,
-    "defaultedPayment": false,
-    "numberOfEmployees": 20
+    "numberOfEmployees": 10,
+    "annualRevenue": 61399457,
+    "companyAge": 4
   },
-  "industry": "Telecom"
+  "industry": "Healthcare"
 }

@@ -82,19 +82,19 @@
         </extensionElements>
         <variable name="Machine learning scoreboard" typeRef="Scoreboard"/>
         <encapsulatedLogic typeRef="Scoreboard">
-            <formalParameter name="industry" typeRef="Industry"/>
             <formalParameter name="clientInformation" typeRef="ClientInformation"/>
+            <formalParameter name="industry" typeRef="Industry"/>
             <context>
                 <contextEntry>
                     <variable name="class"/>
                     <literalExpression>
-                        <text>"cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1.Machine_learning_scoreboard"</text>
+                        <text>"decisions.client_onboarding.client_onboarding_decisions.test.MachineLearningScoreboard"</text>
                     </literalExpression>
                 </contextEntry>
                 <contextEntry>
                     <variable name="method signature"/>
                     <literalExpression>
-                        <text>"run(Industry,ClientInformation)"</text>
+                        <text>"run(ClientInformation,Industry)"</text>
                     </literalExpression>
                 </contextEntry>
             </context>

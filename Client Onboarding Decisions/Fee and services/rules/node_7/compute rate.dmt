@@ -157,11 +157,11 @@
         <ResourceSet Locale="en_US">
             <Data Name="Definitions(A0)[]#Format"><![CDATA[{0}]]></Data>
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[Score]]></Data>
-            <Data Name="Definitions(A0)#Width"><![CDATA[247]]></Data>
+            <Data Name="Definitions(A0)#Width"><![CDATA[80]]></Data>
             <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[a number]]></Data>
             <Data Name="Definitions(C0)[0]#HeaderText"><![CDATA[min]]></Data>
             <Data Name="Definitions(A0)#HeaderText"><![CDATA[Score rate]]></Data>
-            <Data Name="Definitions(C0)#Width"><![CDATA[210]]></Data>
+            <Data Name="Definitions(C0)#Width"><![CDATA[80]]></Data>
         </ResourceSet>
     </Resources>
 </DT></definition>

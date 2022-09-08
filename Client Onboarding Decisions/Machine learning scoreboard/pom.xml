@@ -7,9 +7,10 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>cp4badmin.client_onboarding.client_onboarding_decisions</groupId>
+    <groupId>decisions.client_onboarding.client_onboarding_decisions</groupId>
     <artifactId>machineLearningScoreboard</artifactId>
     <version>LATEST-SNAPSHOT</version>
+    
 
     <build>
         <plugins>
@@ -26,10 +27,10 @@
                 <configuration>
                     <deployments>
                         <deployment>
-                            <name>Machine-learning-scoreboard</name>
+                            <name>machineLearningScoreboard</name>
                         </deployment>
                     </deployments>
-                <packageName>cp4badmin.client_onboarding.client_onboarding_decisions.machineLearningScoreboard1</packageName>
+                <packageName>decisions.client_onboarding.client_onboarding_decisions.test</packageName>
                 </configuration>
             </plugin>
         </plugins>
